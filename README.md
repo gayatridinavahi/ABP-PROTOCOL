@@ -52,10 +52,4 @@ state on the next rising edge of the clock.
            address, write, select, and write data signals must remain stable during
            the transition from the SETUP to ACCESS state.
            Exit from the ACCESS state is controlled by the PREADY signal from
-           the slave:
-               • If PREADY is held LOW by the slave then the peripheral bus
-                 remains in the ACCESS state.
-               • If PREADY is driven HIGH by the slave then the ACCESS state is
-                 exited and the bus returns to the IDLE state if no more transfers are
-                 required. Alternatively, the bus moves directly to the SETUP state
-                 if another transfer follows.
+           the slave.
