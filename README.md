@@ -16,8 +16,29 @@
 **Bus** **Architecture**
 ![image](https://github.com/gayatridinavahi/ABP-PROTOCOL/assets/139046389/3140b0a0-369a-446c-938c-ed688cd64647)
 
-## State Diagram reference
+## State Diagram Reference
 ![image](https://github.com/gayatridinavahi/ABP-PROTOCOL/assets/139046389/d87eae81-08bc-4d3d-9fb3-84ababda438d)
+
+## Signal Description
+• PCLK Clock: The rising edge of PCLK times all transfers on the APB.
+
+• PRESET: System bus equivalent Reset. The APB reset signal is active LOW.
+
+• PADDR: 32-bit address bus
+
+• PSEL: The slave device is selected and that a data transfer is required.
+
+• PENABLE: Enable, this signal indicates the second and subsequent cycles of an APB transfer.
+
+• PWRITE: control bit to dictate read or write operation.
+
+• PWDATA: 32 bits Write data if PWRITE is HIGH.
+
+• PREADY: Ready To extend an APB transfer.
+
+• PRDATA: 32 bits Read data if PWRITE is LOW.
+
+• PSLAVERR: Slave error, this signal indicates a transfer failure.
 
 ### Operating States
 **IDLE** This is the default state of the APB.
@@ -32,9 +53,9 @@ state on the next rising edge of the clock.
            the transition from the SETUP to ACCESS state.
            Exit from the ACCESS state is controlled by the PREADY signal from
            the slave:
-               '•'If PREADY is held LOW by the slave then the peripheral bus
-                  remains in the ACCESS state.
-               '•' If PREADY is driven HIGH by the slave then the ACCESS state is
-                   exited and the bus returns to the IDLE state if no more transfers are
-                   required. Alternatively, the bus moves directly to the SETUP state
-                   if another transfer follows.
+               • If PREADY is held LOW by the slave then the peripheral bus
+                 remains in the ACCESS state.
+               • If PREADY is driven HIGH by the slave then the ACCESS state is
+                 exited and the bus returns to the IDLE state if no more transfers are
+                 required. Alternatively, the bus moves directly to the SETUP state
+                 if another transfer follows.
