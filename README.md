@@ -38,7 +38,7 @@
 
 • PRDATA: 32 bits Read data if PWRITE is LOW.
 
-• PSLAVERR: Slave error, this signal indicates a transfer failure.
+• PSLVERR: Slave error, this signal indicates a transfer failure.
 
 ### Operating States
 **IDLE** This is the default state of the APB.
