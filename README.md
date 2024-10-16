@@ -52,4 +52,11 @@ state on the next rising edge of the clock.
            address, write, select, and write data signals must remain stable during
            the transition from the SETUP to ACCESS state.
            Exit from the ACCESS state is controlled by the PREADY signal from
-           the slave.
+           the slave.           
+## Results
+The waveform generated has been verified for the following scenarios:
+ 1) Read-Write
+ 2) Read-Only
+ 3) Write only
+ 4) Fixed-Value
+![image](https://github.com/user-attachments/assets/f0f20e68-9c45-4f8e-8e5e-d1c3f7b7d4ab)
